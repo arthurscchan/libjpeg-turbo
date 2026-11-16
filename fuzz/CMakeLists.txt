@@ -74,6 +74,12 @@ target_link_libraries(decompress_libjpeg_fuzzer${FUZZER_SUFFIX} ${FUZZ_LIBRARY}
 install(TARGETS decompress_libjpeg_fuzzer${FUZZER_SUFFIX}
   RUNTIME DESTINATION ${FUZZ_BINDIR} COMPONENT bin)
 
+add_executable(decompress_scaled_fuzzer${FUZZER_SUFFIX} decompress_scaled.cc)
+target_link_libraries(decompress_scaled_fuzzer${FUZZER_SUFFIX} ${FUZZ_LIBRARY}
+  jpeg-static)
+install(TARGETS decompress_scaled_fuzzer${FUZZER_SUFFIX}
+  RUNTIME DESTINATION ${FUZZ_BINDIR} COMPONENT bin)
+
 add_fuzz_target(decompress_yuv decompress_yuv.cc)
 
 add_fuzz_target(transform transform.cc)

@@ -76,4 +76,6 @@ install(TARGETS decompress_libjpeg_fuzzer${FUZZER_SUFFIX}
 
 add_fuzz_target(decompress_yuv decompress_yuv.cc)
 
+add_fuzz_target(save_image save_image.cc)
+
 add_fuzz_target(transform transform.cc)

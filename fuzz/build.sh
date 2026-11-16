@@ -36,6 +36,7 @@ FUZZ_DIR=$(dirname "$0")
 for fuzzer in libjpeg_turbo \
 	decompress_libjpeg \
 	decompress_yuv \
+	save_image \
 	transform; do
 	cp $SRC/decompress_fuzzer_seed_corpus.zip $OUT/${fuzzer}_fuzzer${FUZZER_SUFFIX}_seed_corpus.zip
 	if [ -f "$FUZZ_DIR/jpeg.dict" ]; then
